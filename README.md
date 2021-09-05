@@ -34,6 +34,8 @@ Main data flow:
 3. Microservice 1 sends the updated location to microservice 2 using Protobuf and GRPC
 4. Microservice 2 prepares and persists the data
 
+![alt text](./resources/AppStructure.png)
+
 For microservices development, you could use any web framework or plain go. Multiple popular web frameworks are listed before.
 
 - [https://github.com/gin-gonic/gin](https://github.com/gin-gonic/gin)
