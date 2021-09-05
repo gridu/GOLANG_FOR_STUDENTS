@@ -10,15 +10,22 @@ The system provides 3 REST endpoints for the backend clients with the following 
 
 1. Update current user location by the username.
 2. Search for users in some location within the provided radius (with pagination).
-3. Returns distance traveled by a person within some date/time range. Time range defaults to 1 day.
+3. Returns distance traveled by a person within some date/time range. Time range defaults to 1 day. 
+
+    Examples: 
+
+    - For 35.12314, 27.64532 → 39.12355, 27.64538 distance 445km
+    - For 35.12314, 27.64532 → 39.12355, 27.64538 → 35.12314, 27.64532 distance is 890km
 
 REST interface and contracts should be designed. 
 
 The system should validate all input data, and respond with the proper status code and message. 
 
 - username - 4-16 symbols (a-zA-Z0-9 symbols are acceptable)
-- coordinates - fractional part of a number should be limited by the 8 signs, latitude and longitude should be validated by the regular rules.
-- dates - use ISO 8601 date format
+- coordinates - fractional part of a number should be limited by the 8 signs, latitude and longitude should be validated by the regular rules. For example:
+    - 35.12314, 27.64532
+    - 39.12355, 27.64538
+- dates - use ISO 8601 date format (2021-09-02T11:26:18+00:00)
 
 ### Implementation notices
 
@@ -63,8 +70,10 @@ The project should be well documented, due to Golang guidelines.
 
 Also, [README.md](http://readme.md) file should be present and contain comprehensive instruction for local environment setup
 
-### Deployment
+### Deployment (optional)
 
 The developed application should be dockerized, for orchestration Kubernetes or Docker-compose could be used. 
 
 The ability to run the application with a single command will be a plus. (consider using multi-stage builds).
+
+Good Luck!!!
